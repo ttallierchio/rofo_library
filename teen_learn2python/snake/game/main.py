@@ -2,7 +2,7 @@ import random
 from datetime import datetime, timedelta
 
 import pygame
-from constants import BLACK, GREEN, RED, WHITE, WINDOW_HEIGHT, WINDOW_WIDTH
+from constants import  GREEN, RED, WHITE, WINDOW_HEIGHT, WINDOW_WIDTH
 from snake_node import SnakeNode
 
 pygame.init()
