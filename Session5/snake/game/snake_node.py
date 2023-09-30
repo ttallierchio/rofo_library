@@ -36,7 +36,7 @@ class SnakeNode:
         del self
 
     def should_move(self) -> bool:
-        """ if the snake is ready to move after waiting a 100 milliseconds
+        """if the snake is ready to move after waiting a 100 milliseconds
 
         Returns:
             bool: should we update the snake position?
@@ -48,21 +48,21 @@ class SnakeNode:
             return True
         return False
 
-    def move_tail(self, x, y):
+    def move_tail(self, x: int, y: int):
         """
-            recursive function move the current coords to the next node, 
-            then update with the parent coords
+            recursive function move the current coords to the next node,
+            then update with the parent coords.
 
         Args:
-            x (_type_): _description_
-            y (_type_): _description_
+            x (int): the x pos on the grid
+            y (int): the y pos on the grid
         """
         if self.next_node:
             self.next_node.move_tail(self.x, self.y)
         self.x = x
         self.y = y
 
-    def move(self, move_x, move_y):
+    def move(self, move_x:int, move_y:int):
         """
             move the snake head and start moving each tail node
 
@@ -92,8 +92,8 @@ class SnakeNode:
             print("kaboom")
 
     def add_tail(self):
-        """ 
-            add a new tail node
+        """
+        add a new tail node
         """
         prev = None
         node = self
