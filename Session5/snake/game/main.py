@@ -27,7 +27,6 @@ snake_head: SnakeNode = SnakeNode(10, 10)
 
 
 SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-last_move = None
 
 score = 0
 # Set the size of the grid block
