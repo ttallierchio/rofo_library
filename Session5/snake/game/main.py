@@ -8,7 +8,7 @@ from constants import (
     WHITE,
     WINDOW_HEIGHT,
     WINDOW_WIDTH,
-    WINDOW_HEIGHT_DRAW,
+    GRID_HEIGHT_DRAW,
     BLOCKSIZE,
 )
 from snake_node import SnakeNode
@@ -38,7 +38,7 @@ def draw_grid():
     """
 
     for x in range(0, WINDOW_WIDTH, BLOCKSIZE):
-        for y in range(0, WINDOW_HEIGHT_DRAW, BLOCKSIZE):  # we want black space at
+        for y in range(0, GRID_HEIGHT_DRAW, BLOCKSIZE):  # we want black space at
             rect = pygame.Rect(x, y, BLOCKSIZE, BLOCKSIZE)
             pygame.draw.rect(SCREEN, WHITE, rect, 1)
 
@@ -86,7 +86,6 @@ def eat_food():
     when the snake head intersects with any food remove it
     from the board and fire off a tail adding event
     """
-    food_hold = None
     for food in food_spots:
         if food[0] == snake_head.x and food[1] == snake_head.y:
             snake_head.add_tail()
@@ -159,5 +158,3 @@ while running:
     eat_food()
     draw_text(pygame, SCREEN)
     pygame.display.flip()
-
-    
