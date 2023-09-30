@@ -14,7 +14,6 @@ from constants import (
 from snake_node import SnakeNode
 
 pygame.init()
-clock = pygame.time.Clock()
 pygame.display.set_caption("Rofo Library Snake Game Example")
 running = True
 move_x = 0
@@ -72,7 +71,6 @@ def draw_text(pygame, surface):
     surface.blit(img2, (0, 415))
 
 
-# surface.blit(img2,0,500)
 def draw_food():
     """
     food drawing method.
@@ -163,4 +161,4 @@ while running:
     draw_text(pygame, SCREEN)
     pygame.display.flip()
 
-    dt = clock.tick(60) / 1000  # limits FPS to 60
+    
