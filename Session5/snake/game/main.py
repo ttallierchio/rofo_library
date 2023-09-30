@@ -2,7 +2,15 @@ import random
 from datetime import datetime, timedelta
 
 import pygame
-from constants import  GREEN, RED, WHITE, WINDOW_HEIGHT, WINDOW_WIDTH,WINDOW_HEIGHT_DRAW,BLOCKSIZE
+from constants import (
+    GREEN,
+    RED,
+    WHITE,
+    WINDOW_HEIGHT,
+    WINDOW_WIDTH,
+    WINDOW_HEIGHT_DRAW,
+    BLOCKSIZE,
+)
 from snake_node import SnakeNode
 
 pygame.init()
@@ -23,22 +31,23 @@ SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 last_move = None
 
 score = 0
-  # Set the size of the grid block
+# Set the size of the grid block
+
 
 def draw_grid():
     """
-        draws our basic grid
+    draws our basic grid
     """
-    
+
     for x in range(0, WINDOW_WIDTH, BLOCKSIZE):
-        for y in range(0, WINDOW_HEIGHT_DRAW, BLOCKSIZE): # we want black space at 
+        for y in range(0, WINDOW_HEIGHT_DRAW, BLOCKSIZE):  # we want black space at
             rect = pygame.Rect(x, y, BLOCKSIZE, BLOCKSIZE)
             pygame.draw.rect(SCREEN, WHITE, rect, 1)
 
 
 def add_food():
     """
-        handles adding food to the array
+    handles adding food to the array
     """
     random.seed()
     rand_x = random.randrange(19)
@@ -66,17 +75,19 @@ def draw_text(pygame, surface):
 # surface.blit(img2,0,500)
 def draw_food():
     """
-        food drawing method.
+    food drawing method.
     """
     for spot in food_spots:
-        rect = pygame.Rect(spot[0] * BLOCKSIZE, spot[1] * BLOCKSIZE, BLOCKSIZE, BLOCKSIZE)
+        rect = pygame.Rect(
+            spot[0] * BLOCKSIZE, spot[1] * BLOCKSIZE, BLOCKSIZE, BLOCKSIZE
+        )
         pygame.draw.rect(SCREEN, GREEN, rect, BLOCKSIZE)
 
 
 def eat_food():
     """
-        when the snake head intersects with any food remove it 
-        from the board and fire off a tail adding event
+    when the snake head intersects with any food remove it
+    from the board and fire off a tail adding event
     """
     food_hold = None
     for food in food_spots:
@@ -90,20 +101,26 @@ def eat_food():
 
 def snake_update():
     """
-        handle drawing the snake and its tail nows and move them if necessary
+    handle drawing the snake and its tail nows and move them if necessary
     """
     if snake_head.should_move() and not snake_head.dead:
         snake_head.move(move_x, move_y)
-    rect = pygame.Rect(snake_head.x * BLOCKSIZE, snake_head.y * BLOCKSIZE, BLOCKSIZE, BLOCKSIZE)
+    rect = pygame.Rect(
+        snake_head.x * BLOCKSIZE, snake_head.y * BLOCKSIZE, BLOCKSIZE, BLOCKSIZE
+    )
     pygame.draw.rect(SCREEN, RED, rect, BLOCKSIZE)
     tail_node = snake_head.next_node
 
     while tail_node:
-        rect = pygame.Rect(tail_node.x * BLOCKSIZE, tail_node.y * BLOCKSIZE, BLOCKSIZE, BLOCKSIZE)
+        rect = pygame.Rect(
+            tail_node.x * BLOCKSIZE, tail_node.y * BLOCKSIZE, BLOCKSIZE, BLOCKSIZE
+        )
         pygame.draw.rect(SCREEN, RED, rect, BLOCKSIZE)
         tail_node = tail_node.next_node
     if snake_head.dead:
-        SCREEN.blit(kaboom_image, (snake_head.x * BLOCKSIZE - 10, snake_head.y * BLOCKSIZE - 10))
+        SCREEN.blit(
+            kaboom_image, (snake_head.x * BLOCKSIZE - 10, snake_head.y * BLOCKSIZE - 10)
+        )
         SCREEN.convert_alpha()
 
 
@@ -112,7 +129,7 @@ while running:
     # poll for events in this event loop, and react
     # pygame.QUIT event means the user clicked X to close your window
     # pygame.KEYDOWN means you are looking for a set of keys being pressed down, not held.
-    
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
