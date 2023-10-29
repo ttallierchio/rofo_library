@@ -62,7 +62,7 @@ class SnakeNode:
         self.x = x
         self.y = y
 
-    def move(self, move_x:int, move_y:int):
+    def move(self, move_x: int, move_y: int):
         """
             move the snake head and start moving each tail node
 
