@@ -15,9 +15,9 @@ def add():
     return f"{a+b}"
 
 
-@app.route("/hello/<string:name>")
-def hello_name(name: str):
-    return f"Hello There, {name}"
+@app.route("/hello/<string:name>/my_favorite_color_is/<string:color>")
+def hello_name(name: str, color: str):
+    return f"Hello There, {name}, my favorite color is also {color}"
 
 
 if __name__ == "__main__":
