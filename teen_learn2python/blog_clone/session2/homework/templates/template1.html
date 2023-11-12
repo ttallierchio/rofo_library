@@ -1,0 +1,15 @@
+<HTML>
+    <BODY>
+        <DIV>
+            {% if first_name != "" %}
+                <p>Hello {{ first_name + ' ' + last_name }}
+            {% endif %}
+            <FORM method="POST">
+                <label class="color_text">first name:</label><input name="first_name" type="textbox"><br>
+                <label class="color_text">last name:</label><input name="last_name" type="textbox"><br>
+                <INPUT type=submit>
+            </FORM>
+    </DIV>
+
+    </BODY>
+</HTML>
