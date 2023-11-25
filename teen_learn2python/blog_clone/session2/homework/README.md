@@ -56,7 +56,7 @@ we use an if statement to show if first name exists, if it does we then put an a
 
 ## Problem 2
 ### The problem statement
-`Create a template with a link to another webpage. Can be a template, or something as simple as google.com”`
+`Create a template with a link to another webpage. Can be a template, or something as simple as google.com`
 
 I have provided both examples, we link to the original template we have built, as well as `www.google.com`
 
