@@ -35,17 +35,17 @@ class LinkedList:
                 return True
             node = node.next
         return False
-    
-    def append(self,value):
+
+    def append(self, value):
         # get last node, and make a "next" one
         node = self._last_node
         node.next = Node(value)
-        
+
         # get the next node, and make sure it terminates. assign last node to this node.
         node = node.next
         node.next = None
         self._last_node = node
-        
+
     def print_nodes(self) -> None:
         node = self._node_root
 

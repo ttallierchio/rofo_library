@@ -30,18 +30,16 @@ if __name__ == "__main__":
 
     for num in range(0, 11, 2):
         print(num)
-        
-    for num in range(0,11):
+
+    for num in range(0, 11):
         if num == 5:
             continue
         print(num)
 
-    for num in range(0,11):
+    for num in range(0, 11):
         if num == 7:
             break
         print(num)
-
-
 
 
 do_something = True
@@ -53,9 +51,13 @@ count = 0
 while count < 50:
     count = count + 1
     print(count)
-    
-    
-dict_example = {"value_int":100,"value_str":"value_str","value_list":[1,2,3,4,5,6]}
+
+
+dict_example = {
+    "value_int": 100,
+    "value_str": "value_str",
+    "value_list": [1, 2, 3, 4, 5, 6],
+}
 print(dict_example)
 print(dict_example.keys())
 print(dict_example.values())
@@ -63,12 +65,12 @@ print(dict_example.items())
 print(dict_example["value_list"])
 
 
-data = range(1,21)
+data = range(1, 21)
 
 evens = [x for x in data if x % 2 == 0]
 odds = [x for x in data if x % 2 == 1]
-print(evens,odds)
+print(evens, odds)
 
-#zip combines same size lists into seperate tuples, so in this case its 2,1 - 4,3 - 6,5
-new_dict = {x:y for x,y in zip(evens,odds)}
+# zip combines same size lists into seperate tuples, so in this case its 2,1 - 4,3 - 6,5
+new_dict = {x: y for x, y in zip(evens, odds)}
 print(new_dict)

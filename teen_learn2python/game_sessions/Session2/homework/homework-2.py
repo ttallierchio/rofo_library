@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     input_grade = input("enter the grade ")
 
     if input_grade.isnumeric():
@@ -22,7 +22,7 @@ if __name__ == '__main__':
             print("Excellent!")
         elif input_grade == "B":
             print("Great!")
-        elif input_grade== "C":
+        elif input_grade == "C":
             print("Average")
         elif input_grade == "D":
             print("You can do better")
@@ -30,4 +30,3 @@ if __name__ == '__main__':
             print("You failed!")
         else:
             print("Please enter a valid grade 0-100, A-F")
-        

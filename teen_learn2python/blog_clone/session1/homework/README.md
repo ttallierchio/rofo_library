@@ -14,6 +14,7 @@ my_decimal_var = 3.141592654
 my_list = ['cheese','crackers','pants']
 my_dictonary = {'key':'pair','nested':{'key':'pair'}}
  ```
+ this code should run as is
 
  arguments are alot like parameters, and you should validate what kind of variable they are before storing them. we do this with the `int` function. we reterive them with the `request` object and the `args`
 ### f strings refresher
@@ -36,10 +37,13 @@ this code should run as is
  as a reminder here is how a function is defined in python
 
  ```python
-  def my_function(val_1,val_2):
+def my_function(val_1,val_2):
     my_logic = val_1 + val_2
     return my_logic
+print(my_function('abc','123'))
  ```
+
+ this code should run as is
 
  We define a function with the `def` keyword. this stands for define as in we are defining a function called `my_function`.
 
