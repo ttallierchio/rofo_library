@@ -16,7 +16,13 @@ class DBService():
             create_all(self.engine)
         else:
             self.engine = create_engine("sqlite:///list_nodes.db")
-            
+    def filter_data(self,data):
+        with self.engine.connect() as session:
+            stmt = select(ListNode)
+            breakpoint
+            stmt = stmt.where(ListNode.text.like(f"{data}%"))  
+            rs = session.execute(stmt)
+            return [{"id":row[0],"desc":row[1]} for row in rs.fetchall()]     
     def read_data(self):
         with self.engine.connect() as session:
             stmt = select(ListNode)

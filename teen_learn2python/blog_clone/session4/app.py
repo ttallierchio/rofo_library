@@ -20,9 +20,12 @@ def write_new_item():
 @app.route("/list_items")
 def read_list():
     return service.read_data()
+@app.route("/filter_items")
+def filter_set():
+    args = request.args["search_for"]
+    return service.filter_data(args)
 @app.route("/delete_item", methods=["DELETE"])
 def delete_item():
-
     my_json_data = request.json
     print(my_json_data)
     service.delete_item(my_json_data["id"])
