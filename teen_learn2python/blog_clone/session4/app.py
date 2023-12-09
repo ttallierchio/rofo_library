@@ -27,6 +27,9 @@ def delete_item():
     print(my_json_data)
     service.delete_item(my_json_data["id"])
     return {"status":"success"}
+
 @app.route("/update_item", methods=["PUT"])
 def update_list():
-    return request.action
+    my_json_data = request.json
+    service.update_item(id=my_json_data["id"],value=my_json_data["value"])
+    return {"status":"success"}
