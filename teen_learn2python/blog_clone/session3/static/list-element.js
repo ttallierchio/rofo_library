@@ -9,18 +9,16 @@ export class listElement extends LitElement {
         super()
         this._listItems = ["item1", "item2"];
     }
+
     get input() {
-
         return this.renderRoot?.querySelector('#newitem') ?? null;
-
     }
+
     addItem() {
         this._listItems = [
             ...this._listItems,
             this.input.value];
         this.input.value = '';
-
-
     }
 
     render() {
