@@ -11,13 +11,15 @@ class DBService:
         We are going to check for the existence of the file, and if it does not exist we will create one
         """
         if not os.path.isfile("list_db.sql"):
+            self.engine = create_engine("sqlite:///list_nodes.db")
             create_all(self.engine)
-        self.engine = create_engine("sqlite:///list_nodes.db")
+        else:
+            self.engine = create_engine("sqlite:///list_nodes.db")
 
     def filter_data(self, data):
         with self.engine.connect() as session:
             stmt = select(ListNode)
-
+            breakpoint
             stmt = stmt.where(ListNode.text.like(f"{data}%"))
             rs = session.execute(stmt)
             return [{"id": row[0], "desc": row[1]} for row in rs.fetchall()]
