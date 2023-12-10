@@ -17,7 +17,7 @@ class DBService:
     def filter_data(self, data):
         with self.engine.connect() as session:
             stmt = select(ListNode)
-            breakpoint
+
             stmt = stmt.where(ListNode.text.like(f"{data}%"))
             rs = session.execute(stmt)
             return [{"id": row[0], "desc": row[1]} for row in rs.fetchall()]
