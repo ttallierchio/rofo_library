@@ -24,10 +24,9 @@ export class listElement extends LitElement {
     delItem(val) {
         console.log(this._listItems)
         var new_array = [];
-        this._listItems.forEach(( value ) => {
-            if (value != val)
-            {
-                new_array = [...new_array,value];
+        this._listItems.forEach((value) => {
+            if (value != val) {
+                new_array = [...new_array, value];
             }
         }
         )

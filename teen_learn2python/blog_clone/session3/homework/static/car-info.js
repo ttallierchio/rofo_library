@@ -6,7 +6,7 @@ export class carInfo extends LitElement {
     };
     constructor() {
         super()
-        this.data = {"make":"ford","model":"escort","year":2023,"color":"Red"};
+        this.data = { "make": "ford", "model": "escort", "year": 2023, "color": "Red" };
     }
 
 
@@ -15,7 +15,7 @@ export class carInfo extends LitElement {
         const data = await response.json();
         console.log(this.data)
         this.data = data
-        
+
         console.log(data)
         console.log(this.data)
     }
